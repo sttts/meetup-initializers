@@ -25,7 +25,7 @@ $ kubectl delete databases wordpress
 $ kubectl create -f wordpress-database.yaml
 $ kubectl edit database wordpress
 
-# add metadata.finalizer: ["deleteMysqlDB"]
+# add metadata.finalizer: ["meetup.example.com/deleteMysqlDB"]
 
 $ kubectl delete database wordpress
 $ kubectl get database wordpress -o yaml
