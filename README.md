@@ -86,5 +86,5 @@ http --json "http://localhost:8080/apis/meetup.example.com/v1/namespaces/meetup/
    http PUT "http://localhost:8080/apis/meetup.example.com/v1/namespaces/meetup/databases/wordpress?includeUninitialized=true"
 ```
 
-
+Of course, it's not good practice to delete the whole `.metadata.initializers.pending` value. With a bit more jq magic (`Del(.Metadata.Initializers.pending[] | select(.name="init.databases.meetup.example.com"))`) or proper implementation in Go, this can easily be done.
 
