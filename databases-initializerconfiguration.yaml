@@ -1,0 +1,14 @@
+apiVersion: admissionregistration.k8s.io/v1alpha1
+kind: InitializerConfiguration
+metadata:
+  name: databases.meetup.example.com
+initializers:
+  - name: init.databases.meetup.example.com
+    rules:
+      - apiGroups:
+          - meetup.example.com
+        apiVersions:
+          - v1
+        resources:
+          - databases
+    failurePolicy: Ignore # "Fail" after 1.7. Maybe 1.8? Not yet in master.
